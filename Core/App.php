@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shitingyu
- * Date: 2019/4/19
- * Time: 14:40
- */
+
 require_once 'Route.php';
 
 class App
@@ -14,6 +9,9 @@ class App
 
     }
 
+    /**
+     * 运行应用程序
+     */
     public function run()
     {
         Route::dispatch();

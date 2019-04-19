@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shitingyu
- * Date: 2019/4/19
- * Time: 14:00
- */
 
 error_reporting(E_ALL);                                  //错误级别
 date_default_timezone_set("Asia/Shanghai");   //时区
@@ -20,15 +14,17 @@ require_once(CORE_DIR . 'App.php');
 
 //类自动加载
 spl_autoload_register(function ($className) {
+    $classPath='';
     if(preg_match('/.*Controller$/',$className,$matches)){
-        $path=CONTROLLER_DIR .$className. '.php';
+        $classPath=CONTROLLER_DIR .$className. '.php';
     }
     //component
     //model
 
-    if(!is_file($path)){
+    if(!is_file($classPath)){
         throw new Exception('can not find the Class:'.$className);
     }
+    require_once ($classPath);
 });
 
 
