@@ -8,4 +8,12 @@ class Controller
         exit;
     }
 
+    public function formatData($status, $data)
+    {
+        $response['status'] = $status;
+        $response['data'] = $data;
+        echo json_encode($response);
+        exit;
+    }
+
 }

@@ -15,5 +15,7 @@ class App
     public function run()
     {
         Route::dispatch();
+
+        //日志收集
     }
 }
