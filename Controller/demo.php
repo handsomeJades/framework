@@ -1,7 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shitingyu
- * Date: 2019/4/19
- * Time: 17:48
- */
+
+class demo
+{
+    public function index()
+    {
+        echo __FUNCTION__;
+        exit;
+    }
+
+    public function start()
+    {
+        echo __FUNCTION__;
+        exit;
+    }
+}
