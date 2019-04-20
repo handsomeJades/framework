@@ -14,17 +14,21 @@ require_once(CORE_DIR . 'App.php');
 
 //类自动加载
 spl_autoload_register(function ($className) {
-    $classPath='';
-    if(preg_match('/.*Controller$/',$className,$matches)){
-        $classPath=CONTROLLER_DIR .$className. '.php';
+    $classPath = '';
+    if (preg_match('/.*Controller$/', $className, $matches)) {
+        $classPath = CONTROLLER_DIR . $className . '.php';
+    }
+
+    if ($className == 'Controller' || $className == 'Component' || $className == 'Model') {
+        $classPath = CORE_DIR . $className . '.php';
     }
     //component
     //model
 
-    if(!is_file($classPath)){
-        throw new Exception('can not find the Class:'.$className);
+    if (!is_file($classPath)) {
+        throw new Exception('can not find the Class:' . $className);
     }
-    require_once ($classPath);
+    require_once($classPath);
 });
 
 
