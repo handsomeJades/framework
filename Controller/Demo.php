@@ -4,8 +4,15 @@ class demo extends Controller
 {
     public function index()
     {
-        echo __FUNCTION__;
-        exit;
+//        $userC=Component::make('User');
+//        $name=$userC->getName();
+//        echo $name;
+
+        $carUserC = Component::make('Car\User');
+        echo $carUserC->getCarUser('Kate');
+
+        $carUserC = Component::make('Car\User');
+        echo $carUserC->getCarUser();
     }
 
     public function start()
